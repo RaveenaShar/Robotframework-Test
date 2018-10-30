@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181030 14:40:42.959" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\Users\Raveena.sharma\Downloads\AlayaCare\AlayaCare\tests" id="s1" name="Tests">
+<suite source="C:\Users\Raveena.sharma\Downloads\AlayaCare\AlayaCare\tests\Login.robot" id="s1-s1" name="Login">
+<test id="s1-s1-t1" name="Login with correct credentials">
+<kw type="setup" name="GoTo HomePage" library="PublicKeywords">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${SITE_URL}</arg>
+<arg>${WEBDRIVER}</arg>
+</arguments>
+<msg timestamp="20181030 14:40:44.362" level="INFO">Opening browser 'chrome' to base url 'http://www.phptravels.net'</msg>
+<status status="PASS" endtime="20181030 14:40:56.847" starttime="20181030 14:40:44.362"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181030 14:40:58.159" starttime="20181030 14:40:56.847"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:40:58.159" starttime="20181030 14:40:44.361"></status>
+</kw>
+<kw name="Given user has navigated to the login page" library="Login_resource">
+<kw name="Navigate To Login Page" library="Login_resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN_PAGE}</arg>
+</arguments>
+<msg timestamp="20181030 14:40:58.170" level="INFO">Opening url 'http://www.phptravels.net/login'</msg>
+<status status="PASS" endtime="20181030 14:40:59.307" starttime="20181030 14:40:58.169"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:40:59.308" starttime="20181030 14:40:58.168"></status>
+</kw>
+<kw name="Verify Login Page Is Loaded" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//div[text()='Login']</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:40:59.450" starttime="20181030 14:40:59.309"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>"User navigation to login page successful"</arg>
+</arguments>
+<msg timestamp="20181030 14:40:59.450" level="INFO">"User navigation to login page successful"</msg>
+<status status="PASS" endtime="20181030 14:40:59.451" starttime="20181030 14:40:59.450"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:40:59.451" starttime="20181030 14:40:59.308"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:40:59.451" starttime="20181030 14:40:58.166"></status>
+</kw>
+<kw name="When user provide the correct credentials" library="Login_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20181030 14:41:04.453" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20181030 14:41:04.453" starttime="20181030 14:40:59.453"></status>
+</kw>
+<kw name="Enter Correct Login Credentials" library="LoginPage">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//input[@name='username']</arg>
+</arguments>
+<msg timestamp="20181030 14:41:04.473" level="INFO">Current page contains element '//input[@name='username']'.</msg>
+<status status="PASS" endtime="20181030 14:41:04.474" starttime="20181030 14:41:04.454"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@name='username']</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:04.474" level="INFO">Typing text 'user@phptravels.com' into text field '//input[@name='username']'</msg>
+<status status="PASS" endtime="20181030 14:41:04.761" starttime="20181030 14:41:04.474"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//input[@name='password']</arg>
+</arguments>
+<msg timestamp="20181030 14:41:04.791" level="INFO">Current page contains element '//input[@name='password']'.</msg>
+<status status="PASS" endtime="20181030 14:41:04.792" starttime="20181030 14:41:04.761"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@name='password']</arg>
+<arg>${Correct_Password}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:04.793" level="INFO">Typing text 'demouser' into text field '//input[@name='password']'</msg>
+<status status="PASS" endtime="20181030 14:41:05.117" starttime="20181030 14:41:04.792"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:05.118" starttime="20181030 14:41:04.453"></status>
+</kw>
+<kw name="Click Login" library="LoginPage">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//button[contains(@class,'loginbtn')]</arg>
+</arguments>
+<msg timestamp="20181030 14:41:05.119" level="INFO">Clicking button '//button[contains(@class,'loginbtn')]'.</msg>
+<status status="PASS" endtime="20181030 14:41:05.443" starttime="20181030 14:41:05.119"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:05.444" starttime="20181030 14:41:05.118"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:05.444" starttime="20181030 14:40:59.452"></status>
+</kw>
+<kw name="Then user is logged in" library="Login_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181030 14:41:08.448" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181030 14:41:08.448" starttime="20181030 14:41:05.446"></status>
+</kw>
+<kw name="Verify Login Is Successful" library="AccountPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//h3[text()='Hi, Johny Smith']</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:41:11.466" starttime="20181030 14:41:08.448"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:11.466" starttime="20181030 14:41:08.448"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:11.466" starttime="20181030 14:41:05.446"></status>
+</kw>
+<kw name="And user will be directed to their account page" library="Account_resource">
+<kw name="Verify If User Is At Account Page" library="AccountPage">
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181030 14:41:11.482" level="INFO">${url} = http://www.phptravels.net/account/</msg>
+<status status="PASS" endtime="20181030 14:41:11.482" starttime="20181030 14:41:11.468"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${url}" == "${ACCOUNT_PAGE}"</arg>
+<arg>log to console</arg>
+<arg>"User is at the account page"</arg>
+<arg>ELSE</arg>
+<arg>log to console</arg>
+<arg>"User is not at account page"</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"User is at the account page"</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:41:11.484" starttime="20181030 14:41:11.484"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:11.484" starttime="20181030 14:41:11.483"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:11.485" starttime="20181030 14:41:11.468"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:11.485" starttime="20181030 14:41:11.467"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181030 14:41:14.162" starttime="20181030 14:41:11.490"></status>
+</kw>
+<doc>Login with correct credentials</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20181030 14:41:14.162" critical="yes" starttime="20181030 14:40:44.360"></status>
+</test>
+<test id="s1-s1-t2" name="Login with incorrect credentials">
+<kw type="setup" name="GoTo HomePage" library="PublicKeywords">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${SITE_URL}</arg>
+<arg>${WEBDRIVER}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:14.166" level="INFO">Opening browser 'chrome' to base url 'http://www.phptravels.net'</msg>
+<status status="PASS" endtime="20181030 14:41:22.659" starttime="20181030 14:41:14.165"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181030 14:41:23.947" starttime="20181030 14:41:22.659"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:23.947" starttime="20181030 14:41:14.165"></status>
+</kw>
+<kw name="Given user has navigated to the login page" library="Login_resource">
+<kw name="Navigate To Login Page" library="Login_resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN_PAGE}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:23.962" level="INFO">Opening url 'http://www.phptravels.net/login'</msg>
+<status status="PASS" endtime="20181030 14:41:24.913" starttime="20181030 14:41:23.961"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:24.913" starttime="20181030 14:41:23.958"></status>
+</kw>
+<kw name="Verify Login Page Is Loaded" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//div[text()='Login']</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:41:24.996" starttime="20181030 14:41:24.914"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>"User navigation to login page successful"</arg>
+</arguments>
+<msg timestamp="20181030 14:41:24.998" level="INFO">"User navigation to login page successful"</msg>
+<status status="PASS" endtime="20181030 14:41:24.998" starttime="20181030 14:41:24.997"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:24.998" starttime="20181030 14:41:24.914"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:24.999" starttime="20181030 14:41:23.957"></status>
+</kw>
+<kw name="When user provide the incorrect password for their account" library="Login_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20181030 14:41:30.010" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20181030 14:41:30.010" starttime="20181030 14:41:25.009"></status>
+</kw>
+<kw name="Enter Incorrect Login Credentials" library="LoginPage">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//input[@name='username']</arg>
+</arguments>
+<msg timestamp="20181030 14:41:30.059" level="INFO">Current page contains element '//input[@name='username']'.</msg>
+<status status="PASS" endtime="20181030 14:41:30.060" starttime="20181030 14:41:30.012"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@name='username']</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:30.060" level="INFO">Typing text 'user@phptravels.com' into text field '//input[@name='username']'</msg>
+<status status="PASS" endtime="20181030 14:41:30.363" starttime="20181030 14:41:30.060"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//input[@name='password']</arg>
+</arguments>
+<msg timestamp="20181030 14:41:30.428" level="INFO">Current page contains element '//input[@name='password']'.</msg>
+<status status="PASS" endtime="20181030 14:41:30.429" starttime="20181030 14:41:30.363"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@name='password']</arg>
+<arg>${Incorrect_Password}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:30.432" level="INFO">Typing text 'abc' into text field '//input[@name='password']'</msg>
+<status status="PASS" endtime="20181030 14:41:30.586" starttime="20181030 14:41:30.430"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:30.586" starttime="20181030 14:41:30.011"></status>
+</kw>
+<kw name="Click Login" library="LoginPage">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//button[contains(@class,'loginbtn')]</arg>
+</arguments>
+<msg timestamp="20181030 14:41:30.589" level="INFO">Clicking button '//button[contains(@class,'loginbtn')]'.</msg>
+<status status="PASS" endtime="20181030 14:41:30.858" starttime="20181030 14:41:30.588"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:30.858" starttime="20181030 14:41:30.587"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:30.858" starttime="20181030 14:41:25.008"></status>
+</kw>
+<kw name="Then print error message" library="Login_resource">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Invalid Email or Password</arg>
+</arguments>
+<msg timestamp="20181030 14:41:30.860" level="INFO">Invalid Email or Password</msg>
+<status status="PASS" endtime="20181030 14:41:30.860" starttime="20181030 14:41:30.860"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:30.860" starttime="20181030 14:41:30.859"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181030 14:41:33.550" starttime="20181030 14:41:30.862"></status>
+</kw>
+<doc>Login with incorrect credentials</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20181030 14:41:33.550" critical="yes" starttime="20181030 14:41:14.164"></status>
+</test>
+<doc>Test cases for login page</doc>
+<status status="PASS" endtime="20181030 14:41:33.553" starttime="20181030 14:40:43.075"></status>
+</suite>
+<suite source="C:\Users\Raveena.sharma\Downloads\AlayaCare\AlayaCare\tests\SearchHotels.robot" id="s1-s2" name="SearchHotels">
+<test id="s1-s2-t1" name="Search for hotels after login">
+<kw type="setup" name="GoTo HomePage" library="PublicKeywords">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${SITE_URL}</arg>
+<arg>${WEBDRIVER}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:33.601" level="INFO">Opening browser 'chrome' to base url 'http://www.phptravels.net'</msg>
+<status status="PASS" endtime="20181030 14:41:43.672" starttime="20181030 14:41:33.600"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181030 14:41:44.877" starttime="20181030 14:41:43.673"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:44.877" starttime="20181030 14:41:33.600"></status>
+</kw>
+<kw name="Given user has navigated to the login page" library="Login_resource">
+<kw name="Navigate To Login Page" library="Login_resource">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN_PAGE}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:44.883" level="INFO">Opening url 'http://www.phptravels.net/login'</msg>
+<status status="PASS" endtime="20181030 14:41:45.854" starttime="20181030 14:41:44.882"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:45.856" starttime="20181030 14:41:44.881"></status>
+</kw>
+<kw name="Verify Login Page Is Loaded" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//div[text()='Login']</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:41:45.942" starttime="20181030 14:41:45.857"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>"User navigation to login page successful"</arg>
+</arguments>
+<msg timestamp="20181030 14:41:45.943" level="INFO">"User navigation to login page successful"</msg>
+<status status="PASS" endtime="20181030 14:41:45.943" starttime="20181030 14:41:45.943"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:45.943" starttime="20181030 14:41:45.857"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:45.943" starttime="20181030 14:41:44.881"></status>
+</kw>
+<kw name="And user provide the correct credentials" library="Login_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20181030 14:41:50.945" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20181030 14:41:50.945" starttime="20181030 14:41:45.944"></status>
+</kw>
+<kw name="Enter Correct Login Credentials" library="LoginPage">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//input[@name='username']</arg>
+</arguments>
+<msg timestamp="20181030 14:41:50.964" level="INFO">Current page contains element '//input[@name='username']'.</msg>
+<status status="PASS" endtime="20181030 14:41:50.964" starttime="20181030 14:41:50.945"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@name='username']</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:50.965" level="INFO">Typing text 'user@phptravels.com' into text field '//input[@name='username']'</msg>
+<status status="PASS" endtime="20181030 14:41:51.321" starttime="20181030 14:41:50.965"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//input[@name='password']</arg>
+</arguments>
+<msg timestamp="20181030 14:41:51.344" level="INFO">Current page contains element '//input[@name='password']'.</msg>
+<status status="PASS" endtime="20181030 14:41:51.345" starttime="20181030 14:41:51.321"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@name='password']</arg>
+<arg>${Correct_Password}</arg>
+</arguments>
+<msg timestamp="20181030 14:41:51.345" level="INFO">Typing text 'demouser' into text field '//input[@name='password']'</msg>
+<status status="PASS" endtime="20181030 14:41:51.524" starttime="20181030 14:41:51.345"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:51.525" starttime="20181030 14:41:50.945"></status>
+</kw>
+<kw name="Click Login" library="LoginPage">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//button[contains(@class,'loginbtn')]</arg>
+</arguments>
+<msg timestamp="20181030 14:41:51.526" level="INFO">Clicking button '//button[contains(@class,'loginbtn')]'.</msg>
+<status status="PASS" endtime="20181030 14:41:51.726" starttime="20181030 14:41:51.525"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:51.726" starttime="20181030 14:41:51.525"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:51.727" starttime="20181030 14:41:45.944"></status>
+</kw>
+<kw name="And user is logged in" library="Login_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181030 14:41:54.731" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181030 14:41:54.731" starttime="20181030 14:41:51.730"></status>
+</kw>
+<kw name="Verify Login Is Successful" library="AccountPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//h3[text()='Hi, Johny Smith']</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:41:56.645" starttime="20181030 14:41:54.731"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:56.645" starttime="20181030 14:41:54.731"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:41:56.645" starttime="20181030 14:41:51.730"></status>
+</kw>
+<kw name="And user has clicked Home to access the search page" library="SearchHotels_resource">
+<kw name="Click On Home Header" library="HotelSearchPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//a[text()='Home']</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:41:56.727" starttime="20181030 14:41:56.647"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//a[text()='Home']</arg>
+</arguments>
+<msg timestamp="20181030 14:41:56.727" level="INFO">Clicking element '//a[text()='Home']'.</msg>
+<status status="PASS" endtime="20181030 14:41:59.981" starttime="20181030 14:41:56.727"></status>
+</kw>
+<kw name="Verify Search Page Is Open" library="HotelSearchPage">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20181030 14:42:00.117" level="INFO">Current page contains element '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20181030 14:42:00.118" starttime="20181030 14:41:59.982"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:00.118" starttime="20181030 14:41:59.981"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:00.118" starttime="20181030 14:41:56.646"></status>
+</kw>
+<kw name="Verify Search Page Is Open" library="HotelSearchPage">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20181030 14:42:00.159" level="INFO">Current page contains element '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20181030 14:42:00.159" starttime="20181030 14:42:00.119"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:00.159" starttime="20181030 14:42:00.119"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:00.159" starttime="20181030 14:41:56.646"></status>
+</kw>
+<kw name="And user has chosen the Hotels option" library="SearchHotels_resource">
+<kw name="Click On Hotel Search Option" library="HotelSearchPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//a[@href="#HOTELS"]</arg>
+</arguments>
+<msg timestamp="20181030 14:42:00.164" level="INFO">Clicking element '//a[@href="#HOTELS"]'.</msg>
+<status status="PASS" endtime="20181030 14:42:00.495" starttime="20181030 14:42:00.163"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:00.495" starttime="20181030 14:42:00.163"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:03.497" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181030 14:42:03.497" starttime="20181030 14:42:00.496"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:03.497" starttime="20181030 14:42:00.162"></status>
+</kw>
+<kw name="And user has chosen a hotel for &lt;city&gt;" library="SearchHotels_resource">
+<kw name="User Enters City Name" library="HotelSearchPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:06.498" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181030 14:42:06.498" starttime="20181030 14:42:03.498"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//input[@class='select2-input']</arg>
+</arguments>
+<msg timestamp="20181030 14:42:06.527" level="INFO">Current page contains element '//input[@class='select2-input']'.</msg>
+<status status="PASS" endtime="20181030 14:42:06.527" starttime="20181030 14:42:06.498"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:08.529" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181030 14:42:08.529" starttime="20181030 14:42:06.527"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//div[@id='s2id_autogen8']</arg>
+</arguments>
+<msg timestamp="20181030 14:42:08.529" level="INFO">Clicking element '//div[@id='s2id_autogen8']'.</msg>
+<status status="PASS" endtime="20181030 14:42:08.716" starttime="20181030 14:42:08.529"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:10.717" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181030 14:42:10.717" starttime="20181030 14:42:08.716"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:11.717" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181030 14:42:11.717" starttime="20181030 14:42:10.717"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@class='select2-input select2-focused']</arg>
+<arg>${City_name}</arg>
+</arguments>
+<msg timestamp="20181030 14:42:11.718" level="INFO">Typing text 'Dubai' into text field '//input[@class='select2-input select2-focused']'</msg>
+<status status="PASS" endtime="20181030 14:42:12.044" starttime="20181030 14:42:11.717"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:15.044" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181030 14:42:15.044" starttime="20181030 14:42:12.044"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>//input[@class='select2-input select2-focused']</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:42:15.116" starttime="20181030 14:42:15.044"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:15.116" starttime="20181030 14:42:03.498"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:15.116" starttime="20181030 14:42:03.497"></status>
+</kw>
+<kw name="And user have chosen with dates &lt;checkin&gt; to &lt;checkout&gt;" library="SearchHotels_resource">
+<kw name="User Enters Checkin date" library="HotelSearchPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:17.118" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181030 14:42:17.118" starttime="20181030 14:42:15.118"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@name='checkin']</arg>
+<arg>${Checkin_date}</arg>
+</arguments>
+<msg timestamp="20181030 14:42:17.119" level="INFO">Typing text '22/01/2019' into text field '//input[@name='checkin']'</msg>
+<status status="PASS" endtime="20181030 14:42:17.684" starttime="20181030 14:42:17.118"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:17.684" starttime="20181030 14:42:15.117"></status>
+</kw>
+<kw name="User Enters Checkout date" library="HotelSearchPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:19.686" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181030 14:42:19.687" starttime="20181030 14:42:17.685"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@name='checkout']</arg>
+<arg>${Checkout_date}</arg>
+</arguments>
+<msg timestamp="20181030 14:42:19.689" level="INFO">Typing text '01/01/2019' into text field '//input[@name='checkout']'</msg>
+<status status="PASS" endtime="20181030 14:42:20.281" starttime="20181030 14:42:19.688"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:20.281" starttime="20181030 14:42:17.685"></status>
+</kw>
+<kw name="Verify Checkin Date Less Than Checkout" library="HotelSearchPage">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${Checkin_date}" &gt;= "${Checkout_date}"</arg>
+<arg>log to console</arg>
+<arg>"Checkin date is greater than checkout. Please re-adjust the dates"</arg>
+<arg>ELSE</arg>
+<arg>log to console</arg>
+<arg>"Checkin date is less than checkout date"</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Checkin date is greater than checkout. Please re-adjust the dates"</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:42:20.298" starttime="20181030 14:42:20.283"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:20.299" starttime="20181030 14:42:20.282"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:20.299" starttime="20181030 14:42:20.282"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:20.299" starttime="20181030 14:42:15.117"></status>
+</kw>
+<kw name="And user has selected &lt;num-adults&gt;, &lt;num-children&gt;" library="SearchHotels_resource">
+<kw name="User Enters the number of adults and children" library="HotelSearchPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='travellersInput']</arg>
+</arguments>
+<msg timestamp="20181030 14:42:20.301" level="INFO">Clicking element '//input[@id='travellersInput']'.</msg>
+<status status="PASS" endtime="20181030 14:42:20.640" starttime="20181030 14:42:20.301"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181030 14:42:21.643" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20181030 14:42:21.643" starttime="20181030 14:42:20.641"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//button[@id='adultPlusBtn']</arg>
+</arguments>
+<msg timestamp="20181030 14:42:21.644" level="INFO">Clicking element '//button[@id='adultPlusBtn']'.</msg>
+<status status="PASS" endtime="20181030 14:42:21.996" starttime="20181030 14:42:21.643"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//button[@id='childPlusBtn']</arg>
+</arguments>
+<msg timestamp="20181030 14:42:21.997" level="INFO">Clicking element '//button[@id='childPlusBtn']'.</msg>
+<status status="PASS" endtime="20181030 14:42:22.366" starttime="20181030 14:42:21.996"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:22.366" starttime="20181030 14:42:20.301"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:22.367" starttime="20181030 14:42:20.300"></status>
+</kw>
+<kw name="When user clicks search" library="SearchHotels_resource">
+<kw name="Click Search Button" library="HotelSearchPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20181030 14:42:22.451" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20181030 14:42:24.744" starttime="20181030 14:42:22.450"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:24.745" starttime="20181030 14:42:22.450"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:24.745" starttime="20181030 14:42:22.449"></status>
+</kw>
+<kw name="Then matching results are displayed" library="SearchHotels_resource">
+<kw name="Verify Results Are Present" library="HotelSearchPage">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>//*[@id="body-section"]/div[5]/div/div[3]</arg>
+</arguments>
+<msg timestamp="20181030 14:42:24.782" level="INFO">Current page contains element '//*[@id="body-section"]/div[5]/div/div[3]'.</msg>
+<status status="PASS" endtime="20181030 14:42:24.783" starttime="20181030 14:42:24.751"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:24.783" starttime="20181030 14:42:24.750"></status>
+</kw>
+<kw name="Verify Results Are Valid" library="HotelSearchPage">
+<kw name="Verify If Records Are Present" library="HotelSearchPage">
+<kw name="Get Count" library="BuiltIn">
+<doc>Returns and logs how many times ``item2`` is found from ``item1``.</doc>
+<arguments>
+<arg>//h2[text()='No Results Found']</arg>
+<arg>//*[@id="body-section"]/div[5]/div/div[3]</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20181030 14:42:24.785" level="INFO">Item found from the first item 0 times</msg>
+<msg timestamp="20181030 14:42:24.785" level="INFO">${text} = 0</msg>
+<status status="PASS" endtime="20181030 14:42:24.785" starttime="20181030 14:42:24.784"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" endtime="20181030 14:42:24.795" starttime="20181030 14:42:24.785"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${text}" != "0"</arg>
+<arg>Verify Correct Result</arg>
+<arg>ELSE</arg>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181030 14:42:27.854" starttime="20181030 14:42:24.796"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:27.854" starttime="20181030 14:42:24.796"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:27.854" starttime="20181030 14:42:24.784"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:27.854" starttime="20181030 14:42:24.783"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:27.855" starttime="20181030 14:42:24.750"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181030 14:42:27.855" starttime="20181030 14:42:27.855"></status>
+</kw>
+<status status="PASS" endtime="20181030 14:42:27.856" critical="yes" starttime="20181030 14:41:33.599"></status>
+</test>
+<doc>Test Case for searching hotels</doc>
+<status status="PASS" endtime="20181030 14:42:27.857" starttime="20181030 14:41:33.557"></status>
+</suite>
+<status status="PASS" endtime="20181030 14:42:27.861" starttime="20181030 14:40:42.967"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="2">Smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="3">Tests</stat>
+<stat fail="0" id="s1-s1" name="Login" pass="2">Tests.Login</stat>
+<stat fail="0" id="s1-s2" name="SearchHotels" pass="1">Tests.SearchHotels</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
